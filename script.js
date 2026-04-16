@@ -1,4 +1,4 @@
-const canvasSketch = require('canvas-sketch');
+const canvasSketch = window.canvasSketch;
 
 const settings = {
   dimensions: [ 1080, 1080 ],
