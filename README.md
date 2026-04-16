@@ -1,5 +1,3 @@
----
-
 # 🎨 Interactive Spline Editor
 
 ## 📖 Overview
@@ -47,9 +45,7 @@ The system combines **computational geometry, interaction design, and rendering 
 
 The closest point on a segment is computed using:
 
-[
-u = \frac{(P - A) \cdot (B - A)}{|B - A|^2}
-]
+u = ((P - A) · (B - A)) / |B - A|²
 
 * ( u ) is clamped to ([0,1])
 * Used to compute projection point
