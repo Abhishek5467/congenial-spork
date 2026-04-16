@@ -1,94 +1,113 @@
-This project is an interactive canvas-based tool for constructing and editing smooth curves using quadratic splines. It allows users to:
+---
 
-Add control points dynamically
-Drag and reposition points
-Insert points intelligently along existing curve segments
-Visualize nearest segment and projection point in real-time
+# 🎨 Interactive Spline Editor
 
-The system combines geometry, interaction design, and rendering logic to simulate behavior similar to vector design tools.
+## 📖 Overview
 
-⚙️ Core Features
-🎯 1. Interactive Point Editing
-Click to add points
-Drag to reposition
-Nearest-point selection using distance threshold
-📐 2. Quadratic Spline Construction
-Curve generated using midpoint smoothing
-Piecewise quadratic Bézier segments
-📍 3. Smart Point Insertion
-Detect nearest segment using projection
-Insert new point between correct indices
-Maintains curve topology
-🧮 4. Geometric Projection (Key Concept)
+This project is an interactive canvas-based tool for constructing and editing smooth curves using **quadratic splines**.
 
-Closest point on a segment is computed using:
+It allows users to:
 
-𝑢
-=
-(
-𝑃
-−
-𝐴
-)
-⋅
-(
-𝐵
-−
-𝐴
-)
-∣
-𝐵
-−
-𝐴
-∣
-2
-u=
-∣B−A∣
-2
-(P−A)⋅(B−A)
-	​
+* Add control points dynamically
+* Drag and reposition points
+* Insert points intelligently along existing curve segments
+* Visualize the nearest segment and projection point in real time
 
-Clamped to 
+The system combines **computational geometry, interaction design, and rendering logic** to emulate behaviors found in vector design tools.
+
+---
+
+## ⚙️ Core Features
+
+### 🎯 Interactive Point Editing
+
+* Click to add points
+* Drag to reposition
+* Nearest-point selection using distance threshold
+
+---
+
+### 📐 Quadratic Spline Construction
+
+* Curve generated using midpoint smoothing
+* Piecewise quadratic Bézier segments
+* Smooth visual interpolation between points
+
+---
+
+### 📍 Smart Point Insertion
+
+* Detects nearest segment using projection
+* Inserts new point at the correct position in the sequence
+* Preserves curve topology
+
+---
+
+### 🧮 Geometric Projection (Key Concept)
+
+The closest point on a segment is computed using:
+
 [
-0
-,
-1
+u = \frac{(P - A) \cdot (B - A)}{|B - A|^2}
 ]
-[0,1]
-Used to compute projection point
-Enables accurate snapping
-🎨 5. Real-Time Visual Feedback
-Highlight nearest segment (orange)
-Show projection point (orange dot)
-Continuous hover tracking
-🧠 Concepts Used
-Computational Geometry
-Event-driven Interaction Systems
-Canvas Rendering Pipeline
-Spatial Querying (nearest neighbor + projection)
-Curve Approximation (Quadratic Splines)
-🚀 Outcome
+
+* ( u ) is clamped to ([0,1])
+* Used to compute projection point
+* Enables accurate snapping to segments
+
+---
+
+### 🎨 Real-Time Visual Feedback
+
+* Highlight nearest segment (orange)
+* Display projection point (orange dot)
+* Continuous hover tracking
+
+---
+
+## 🧠 Concepts Used
+
+* Computational Geometry
+* Event-driven Interaction Systems
+* Canvas Rendering Pipeline
+* Spatial Querying (nearest point & segment projection)
+* Curve Approximation (Quadratic Splines)
+
+---
+
+## 🚀 Outcome
 
 This project demonstrates:
 
-Ability to design interactive geometry systems
-Understanding of graphics + UX integration
-Strong foundation for:
-vector editors
-creative coding tools
-CAD-like interfaces
-🧱 2. Project Structure (important for portfolio)
+* Ability to build **interactive geometry systems**
+* Understanding of **graphics + UX integration**
+* Strong foundation for:
 
-Organize like this:
+  * Vector editors
+  * Creative coding tools
+  * CAD-like interfaces
 
+---
+
+## 🧱 Project Structure
+
+```bash
 spline-editor/
 │
 ├── index.html
-├── script.js   ← your current code (cleaned)
+├── script.js
 ├── styles.css
 ├── README.md
 └── demo.gif / screenshot.png
-Minimal index.html
+```
+
+---
+
+## 🌐 Minimal Setup
+
+### `index.html`
+
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -103,26 +122,43 @@ Minimal index.html
   <script src="script.js"></script>
 </body>
 </html>
-🔥 Important (for portfolio)
+```
 
-Record:
+---
 
-GIF of interaction
-short demo video
-🌐 3. Streamlit App (deployment layer)
+## 📸 Demo (Recommended)
 
-Now we wrap this inside Streamlit.
+For best portfolio impact, include:
 
-⚠️ Key constraint
+* GIF showing interaction
+* Short demo video
 
-Streamlit = Python
-Your tool = JavaScript
+---
 
-👉 So we embed your canvas using HTML component
+## 🌐 Streamlit App (Deployment)
 
-✅ Step 1: Install
+This project can be embedded into a Streamlit app.
+
+### ⚠️ Note
+
+* Streamlit uses Python
+* This project uses JavaScript
+
+So we embed the canvas using an HTML component.
+
+---
+
+### ✅ Installation
+
+```bash
 pip install streamlit
-✅ Step 2: Create app.py
+```
+
+---
+
+### ✅ `app.py`
+
+```python
 import streamlit as st
 from streamlit.components.v1 import html
 
@@ -152,5 +188,40 @@ html_code = """
 """
 
 html(html_code, height=1100)
-✅ Step 3: Run
+```
+
+---
+
+### ✅ Run the App
+
+```bash
 streamlit run app.py
+```
+
+---
+
+## 🔮 Future Improvements
+
+* Cubic Bézier curves with handles
+* Curve snapping & constraints
+* Export curve data (JSON / SVG)
+* Animation (GSAP / noise-based motion)
+
+---
+
+## 🧠 Summary
+
+This project showcases the design of an **interactive curve editing system**, combining:
+
+* geometry
+* rendering
+* user interaction
+
+It reflects the foundational principles behind modern design tools like vector editors.
+
+---
+
+If you want, next I can:
+
+* help you write a **short project description for your portfolio website**
+* or upgrade this into a **Bezier editor (next level project)**
