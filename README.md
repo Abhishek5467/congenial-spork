@@ -220,8 +220,3 @@ This project showcases the design of an **interactive curve editing system**, co
 It reflects the foundational principles behind modern design tools like vector editors.
 
 ---
-
-If you want, next I can:
-
-* help you write a **short project description for your portfolio website**
-* or upgrade this into a **Bezier editor (next level project)**
